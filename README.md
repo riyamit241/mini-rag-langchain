@@ -43,6 +43,18 @@ Retrieval-Augmented Generation (RAG) is a technique where:
 - RAG systems depend heavily on both retriever quality and LLM alignment
 
 ---
+## Observed Limitation
+
+When using GPT-2 for generation, the system retrieved correct documents but still produced incorrect/hallucinated answers.
+
+This happened because:
+- GPT-2 is not instruction-tuned
+- It does not reliably follow prompts that restrict it to provided context
+- Retrieval quality alone is not sufficient for grounded generation
+
+This experiment highlights why modern RAG systems rely on instruction-tuned models.
+
+---
 
 ## How to Run
 
@@ -56,3 +68,12 @@ Retrieval-Augmented Generation (RAG) is a technique where:
 
 This is an educational mini-project intended to understand RAG fundamentals.  
 No paid APIs or proprietary models are used.
+
+---
+
+## Possible Improvements
+
+- Replace GPT-2 with a stronger instruction-tuned model (e.g., FLAN-T5)
+- Improve document chunking and overlap
+- Add metadata filtering during retrieval
+- Use a larger or domain-specific embedding model
